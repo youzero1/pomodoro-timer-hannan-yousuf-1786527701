@@ -11,12 +11,12 @@ const linkActive = 'bg-white/10 text-white';
 
 function RootLayout() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100">
+    <div className="min-h-screen bg-[#180f06] text-amber-50">
       <div
-        className="pointer-events-none fixed inset-0 opacity-70"
+        className="pointer-events-none fixed inset-0"
         style={{
           background:
-            'radial-gradient(60% 50% at 50% 0%, rgba(244,63,94,0.18) 0%, rgba(2,6,23,0) 70%)',
+            'radial-gradient(70% 55% at 50% 0%, rgba(251,146,60,0.28) 0%, rgba(120,53,15,0.12) 45%, rgba(24,15,6,0) 75%)',
         }}
       />
       <div className="relative mx-auto flex min-h-screen w-full max-w-3xl flex-col px-4 pb-12 sm:px-6">
