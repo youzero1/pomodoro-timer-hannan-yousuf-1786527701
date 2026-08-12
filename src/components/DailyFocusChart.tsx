@@ -44,7 +44,7 @@ export function DailyFocusChart({ days }: DailyFocusChartProps) {
             >
               <span
                 className={`h-5 text-[10px] font-medium tabular-nums transition ${
-                  active === day.key ? 'text-white opacity-100' : 'text-neutral-400 opacity-0'
+                  active === day.key ? 'text-[#7df9ff] opacity-100' : 'text-neutral-400 opacity-0'
                 }`}
               >
                 {formatDuration(day.seconds)}
@@ -54,13 +54,13 @@ export function DailyFocusChart({ days }: DailyFocusChartProps) {
                   day.seconds === 0
                     ? 'bg-white/10'
                     : isToday
-                      ? 'bg-neutral-100'
-                      : 'bg-neutral-500/60 group-hover:bg-neutral-200'
+                      ? 'bg-[#00f0ff] shadow-[0_0_20px_-2px_rgba(0,240,255,0.9)]'
+                      : 'bg-[#00f0ff]/40 group-hover:bg-[#00f0ff]/80 group-hover:shadow-[0_0_18px_-2px_rgba(0,240,255,0.7)]'
                 }`}
                 style={{ height: `${heightPct}%` }}
               />
               <span
-                className={`text-[10px] ${isToday ? 'font-semibold text-neutral-200' : 'text-neutral-500'}`}
+                className={`text-[10px] ${isToday ? 'font-semibold text-[#7df9ff]' : 'text-neutral-500'}`}
               >
                 {shortWeekday(day.key)}
               </span>

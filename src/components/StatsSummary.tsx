@@ -48,19 +48,19 @@ export function StatsSummary({
         label="Today"
         value={formatDuration(todaySeconds)}
         hint={comparison}
-        accent="text-neutral-100"
+        accent="text-[#7df9ff] [text-shadow:0_0_18px_rgba(0,240,255,0.6)]"
       />
       <Card
         label="Last 7 days"
         value={formatDuration(weekSeconds)}
         hint={`${focusCount} session${focusCount === 1 ? '' : 's'} recorded in total`}
-        accent="text-neutral-300"
+        accent="text-[#8dff6f] [text-shadow:0_0_18px_rgba(57,255,20,0.5)]"
       />
       <Card
         label="Streak"
         value={`${streak} day${streak === 1 ? '' : 's'}`}
         hint={streak > 0 ? 'Keep it going' : 'Finish a session to start one'}
-        accent="text-neutral-300"
+        accent="text-[#ff86e4] [text-shadow:0_0_18px_rgba(255,47,208,0.5)]"
       />
     </div>
   );

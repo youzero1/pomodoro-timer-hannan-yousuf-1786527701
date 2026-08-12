@@ -78,7 +78,7 @@ function TimerPage() {
         <button
           onClick={() => setSettingsOpen(true)}
           aria-label="Open settings"
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-neutral-300 transition hover:bg-white/10 hover:text-white"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-neutral-300 transition hover:border-[#00f0ff]/50 hover:text-[#7df9ff] hover:shadow-[0_0_20px_-4px_rgba(0,240,255,0.8)]"
         >
           <svg
             viewBox="0 0 24 24"
@@ -113,8 +113,8 @@ function TimerPage() {
 
       <DailyGoalBar todaySeconds={todaySeconds} goalMinutes={settings.dailyGoalMinutes} />
 
-      <Link to="/stats" className="text-sm text-neutral-400 transition hover:text-neutral-200">
-        Focused <span className="font-semibold text-neutral-200">{formatDuration(todaySeconds)}</span>{' '}
+      <Link to="/stats" className="text-sm text-neutral-400 transition hover:text-[#7df9ff]">
+        Focused <span className="font-semibold text-[#7df9ff]">{formatDuration(todaySeconds)}</span>{' '}
         today · see stats →
       </Link>
 

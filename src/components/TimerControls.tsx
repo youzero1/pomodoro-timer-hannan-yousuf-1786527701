@@ -10,7 +10,7 @@ interface TimerControlsProps {
 }
 
 const secondary =
-  'rounded-full border border-white/10 px-5 py-3 text-sm text-neutral-300 transition hover:bg-white/5 outline-none focus-visible:ring-2 focus-visible:ring-white/40';
+  'rounded-full border border-white/10 px-5 py-3 text-sm text-neutral-300 transition hover:border-[#00f0ff]/40 hover:text-[#7df9ff] outline-none focus-visible:ring-2 focus-visible:ring-[#00f0ff]/60';
 
 export function TimerControls({
   mode,

@@ -42,7 +42,7 @@ function NumberField({ label, value, min, max, suffix, step = 1, onChange }: Num
             const n = Number(e.target.value);
             if (Number.isFinite(n)) onChange(clamp(Math.round(n)));
           }}
-          className="w-16 rounded-lg border border-white/10 bg-white/5 px-2 py-1.5 text-center text-sm text-white outline-none focus:border-white/30"
+          className="w-16 rounded-lg border border-white/10 bg-white/5 px-2 py-1.5 text-center text-sm text-[#7df9ff] outline-none focus:border-[#00f0ff]/60"
         />
         <button
           onClick={() => onChange(clamp(value + step))}
@@ -78,12 +78,14 @@ function Toggle({ label, description, checked, onChange }: ToggleProps) {
       </span>
       <span
         className={`relative h-6 w-11 shrink-0 rounded-full transition ${
-          checked ? 'bg-neutral-100' : 'bg-white/15'
+          checked
+            ? 'bg-[#00f0ff] shadow-[0_0_18px_-2px_rgba(0,240,255,0.9)]'
+            : 'bg-white/15'
         }`}
       >
         <span
-          className={`absolute top-0.5 h-5 w-5 rounded-full bg-white transition-all ${
-            checked ? 'left-[22px]' : 'left-0.5'
+          className={`absolute top-0.5 h-5 w-5 rounded-full transition-all ${
+            checked ? 'left-[22px] bg-black' : 'left-0.5 bg-neutral-300'
           }`}
         />
       </span>
@@ -192,7 +194,7 @@ export function SettingsPanel({ open, settings, onChange, onReset, onClose }: Se
           </button>
           <button
             onClick={onClose}
-            className="rounded-full bg-white px-6 py-2 text-sm font-semibold text-neutral-900 transition hover:bg-neutral-200"
+            className="rounded-full bg-[#00f0ff] px-6 py-2 text-sm font-semibold text-black shadow-[0_0_24px_-4px_rgba(0,240,255,0.9)] transition hover:bg-[#5cf7ff]"
           >
             Done
           </button>

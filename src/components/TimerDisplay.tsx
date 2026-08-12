@@ -51,7 +51,10 @@ export function TimerDisplay({
             strokeLinecap="round"
             strokeDasharray={CIRCUMFERENCE}
             strokeDashoffset={offset}
-            style={{ transition: 'stroke-dashoffset 0.4s linear, stroke 0.3s ease' }}
+            style={{
+              transition: 'stroke-dashoffset 0.4s linear, stroke 0.3s ease',
+              filter: `drop-shadow(0 0 6px ${theme.ring}) drop-shadow(0 0 14px ${theme.ring})`,
+            }}
           />
         </svg>
 
@@ -63,7 +66,7 @@ export function TimerDisplay({
             {MODE_LABELS[mode]}
           </span>
           <span
-            className="mt-1 font-mono text-6xl font-semibold tabular-nums text-white sm:text-7xl"
+            className={`mt-1 font-mono text-6xl font-semibold tabular-nums sm:text-7xl ${theme.text} [text-shadow:0_0_12px_currentColor,0_0_38px_currentColor]`}
             role="timer"
             aria-label={`${formatClock(remaining)} remaining`}
           >
@@ -81,7 +84,7 @@ export function TimerDisplay({
             key={i}
             className={`h-2 w-2 rounded-full transition ${
               i < sessionIndex - 1 || (i === sessionIndex - 1 && clamped > 0)
-                ? 'bg-white/80'
+                ? `bg-current ${theme.text} [box-shadow:0_0_10px_currentColor]`
                 : 'bg-white/20'
             }`}
           />

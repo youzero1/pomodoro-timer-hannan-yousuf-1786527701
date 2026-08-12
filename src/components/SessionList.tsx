@@ -40,7 +40,7 @@ export function SessionList({ sessions, onClear }: SessionListProps) {
                 onClear();
                 setConfirming(false);
               }}
-              className="rounded-full bg-neutral-100 px-3 py-1 font-semibold text-neutral-900 transition hover:bg-white"
+              className="rounded-full bg-[#ff2fd0] px-3 py-1 font-semibold text-black shadow-[0_0_20px_-4px_rgba(255,47,208,0.9)] transition hover:bg-[#ff6ade]"
             >
               Yes, clear
             </button>
@@ -65,7 +65,7 @@ export function SessionList({ sessions, onClear }: SessionListProps) {
         {groups.map((group) => (
           <div key={group.key}>
             <div className="flex items-baseline justify-between border-b border-white/5 pb-2">
-              <h3 className="text-sm font-semibold text-neutral-200">
+              <h3 className="text-sm font-semibold text-[#7df9ff]">
                 {friendlyDayLabel(group.key)}
               </h3>
               <span className="text-xs tabular-nums text-neutral-400">

@@ -21,7 +21,7 @@ export function TaskInput({ value, onChange, recentTasks, locked }: TaskInputPro
         className={`w-full rounded-xl border px-4 py-3 text-neutral-100 placeholder:text-neutral-500 outline-none transition ${
           locked
             ? 'cursor-default border-white/5 bg-white/[0.03] text-neutral-300'
-            : 'border-white/10 bg-white/5 focus:border-white/30 focus:bg-white/10'
+            : 'border-white/10 bg-white/5 focus:border-[#00f0ff]/60 focus:bg-[#00f0ff]/[0.07] focus:shadow-[0_0_26px_-6px_rgba(0,240,255,0.8)]'
         }`}
       />
 
@@ -31,7 +31,7 @@ export function TaskInput({ value, onChange, recentTasks, locked }: TaskInputPro
             <button
               key={task}
               onClick={() => onChange(task)}
-              className="max-w-full truncate rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300 transition hover:border-white/25 hover:text-white"
+              className="max-w-full truncate rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300 transition hover:border-[#00f0ff]/50 hover:text-[#7df9ff]"
             >
               {task}
             </button>

@@ -21,7 +21,7 @@ export function DailyGoalBar({ todaySeconds, goalMinutes }: DailyGoalBarProps) {
           Daily goal
         </span>
         <span className="text-xs tabular-nums text-neutral-400">
-          <span className="font-semibold text-neutral-200">{formatDuration(todaySeconds)}</span>
+          <span className="font-semibold text-[#7df9ff]">{formatDuration(todaySeconds)}</span>
           {' / '}
           {formatDuration(goalSeconds)}
         </span>
@@ -37,7 +37,9 @@ export function DailyGoalBar({ todaySeconds, goalMinutes }: DailyGoalBarProps) {
       >
         <div
           className={`h-full rounded-full transition-all duration-700 ease-out ${
-            reached ? 'bg-white' : 'bg-neutral-300'
+            reached
+              ? 'bg-[#39ff14] shadow-[0_0_16px_1px_rgba(57,255,20,0.9)]'
+              : 'bg-[#00f0ff] shadow-[0_0_16px_1px_rgba(0,240,255,0.8)]'
           }`}
           style={{ width: `${Math.max(percent, todaySeconds > 0 ? 2 : 0)}%` }}
         />

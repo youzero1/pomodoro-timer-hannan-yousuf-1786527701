@@ -30,7 +30,7 @@ function StatsPage() {
         </p>
         <Link
           to="/"
-          className="rounded-full bg-white px-6 py-2 text-sm font-semibold text-neutral-900 transition hover:bg-neutral-200"
+          className="rounded-full bg-[#00f0ff] px-6 py-2 text-sm font-semibold text-black shadow-[0_0_24px_-4px_rgba(0,240,255,0.9)] transition hover:bg-[#5cf7ff]"
         >
           Start a session
         </Link>
@@ -40,7 +40,9 @@ function StatsPage() {
 
   return (
     <div className="space-y-6 py-2">
-      <h1 className="text-xl font-semibold text-white">Your focus stats</h1>
+      <h1 className="text-xl font-semibold text-[#7df9ff] [text-shadow:0_0_18px_rgba(0,240,255,0.6)]">
+        Your focus stats
+      </h1>
 
       <StatsSummary
         todaySeconds={todaySeconds}
