@@ -50,6 +50,7 @@ export function loadSettings(): Settings {
       typeof raw.soundOnComplete === 'boolean'
         ? raw.soundOnComplete
         : DEFAULT_SETTINGS.soundOnComplete,
+    dailyGoalMinutes: clampInt(raw.dailyGoalMinutes, 0, 960, DEFAULT_SETTINGS.dailyGoalMinutes),
   };
 }
 

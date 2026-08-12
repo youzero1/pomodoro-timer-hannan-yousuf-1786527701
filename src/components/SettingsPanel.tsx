@@ -15,17 +15,18 @@ interface NumberFieldProps {
   min: number;
   max: number;
   suffix: string;
+  step?: number;
   onChange: (value: number) => void;
 }
 
-function NumberField({ label, value, min, max, suffix, onChange }: NumberFieldProps) {
+function NumberField({ label, value, min, max, suffix, step = 1, onChange }: NumberFieldProps) {
   const clamp = (n: number) => Math.min(max, Math.max(min, n));
   return (
     <div className="flex items-center justify-between gap-4 py-3">
       <span className="text-sm text-neutral-300">{label}</span>
       <div className="flex items-center gap-2">
         <button
-          onClick={() => onChange(clamp(value - 1))}
+          onClick={() => onChange(clamp(value - step))}
           aria-label={`Decrease ${label}`}
           className="h-8 w-8 rounded-lg border border-white/10 text-neutral-300 transition hover:bg-white/10"
         >
@@ -44,7 +45,7 @@ function NumberField({ label, value, min, max, suffix, onChange }: NumberFieldPr
           className="w-16 rounded-lg border border-white/10 bg-white/5 px-2 py-1.5 text-center text-sm text-white outline-none focus:border-white/30"
         />
         <button
-          onClick={() => onChange(clamp(value + 1))}
+          onClick={() => onChange(clamp(value + step))}
           aria-label={`Increase ${label}`}
           className="h-8 w-8 rounded-lg border border-white/10 text-neutral-300 transition hover:bg-white/10"
         >
@@ -158,6 +159,15 @@ export function SettingsPanel({ open, settings, onChange, onReset, onClose }: Se
             max={12}
             suffix=""
             onChange={(v) => onChange({ sessionsBeforeLongBreak: v })}
+          />
+          <NumberField
+            label="Daily focus goal"
+            value={settings.dailyGoalMinutes}
+            min={0}
+            max={960}
+            step={15}
+            suffix="min"
+            onChange={(v) => onChange({ dailyGoalMinutes: v })}
           />
           <Toggle
             label="Auto-start next session"

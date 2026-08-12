@@ -7,6 +7,7 @@ export interface Settings {
   sessionsBeforeLongBreak: number;
   autoStartNext: boolean;
   soundOnComplete: boolean;
+  dailyGoalMinutes: number;
 }
 
 export interface SessionRecord {
@@ -24,6 +25,7 @@ export const DEFAULT_SETTINGS: Settings = {
   sessionsBeforeLongBreak: 4,
   autoStartNext: false,
   soundOnComplete: true,
+  dailyGoalMinutes: 120,
 };
 
 export const MODE_LABELS: Record<TimerMode, string> = {

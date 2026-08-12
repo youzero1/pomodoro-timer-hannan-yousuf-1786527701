@@ -5,6 +5,7 @@ import { ModeTabs } from '@/components/ModeTabs';
 import { TimerControls } from '@/components/TimerControls';
 import { TaskInput } from '@/components/TaskInput';
 import { SettingsPanel } from '@/components/SettingsPanel';
+import { DailyGoalBar } from '@/components/DailyGoalBar';
 import { useSettings } from '@/hooks/useSettings';
 import { useSessions } from '@/hooks/useSessions';
 import { useTimer } from '@/hooks/useTimer';
@@ -109,6 +110,8 @@ function TimerPage() {
         onReset={timer.reset}
         onSkip={timer.skip}
       />
+
+      <DailyGoalBar todaySeconds={todaySeconds} goalMinutes={settings.dailyGoalMinutes} />
 
       <Link to="/stats" className="text-sm text-neutral-400 transition hover:text-neutral-200">
         Focused <span className="font-semibold text-neutral-200">{formatDuration(todaySeconds)}</span>{' '}
