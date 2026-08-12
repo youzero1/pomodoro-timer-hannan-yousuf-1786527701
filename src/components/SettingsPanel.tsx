@@ -22,12 +22,12 @@ function NumberField({ label, value, min, max, suffix, onChange }: NumberFieldPr
   const clamp = (n: number) => Math.min(max, Math.max(min, n));
   return (
     <div className="flex items-center justify-between gap-4 py-3">
-      <span className="text-sm text-slate-300">{label}</span>
+      <span className="text-sm text-neutral-300">{label}</span>
       <div className="flex items-center gap-2">
         <button
           onClick={() => onChange(clamp(value - 1))}
           aria-label={`Decrease ${label}`}
-          className="h-8 w-8 rounded-lg border border-white/10 text-slate-300 transition hover:bg-white/10"
+          className="h-8 w-8 rounded-lg border border-white/10 text-neutral-300 transition hover:bg-white/10"
         >
           −
         </button>
@@ -46,11 +46,11 @@ function NumberField({ label, value, min, max, suffix, onChange }: NumberFieldPr
         <button
           onClick={() => onChange(clamp(value + 1))}
           aria-label={`Increase ${label}`}
-          className="h-8 w-8 rounded-lg border border-white/10 text-slate-300 transition hover:bg-white/10"
+          className="h-8 w-8 rounded-lg border border-white/10 text-neutral-300 transition hover:bg-white/10"
         >
           +
         </button>
-        <span className="w-8 text-xs text-slate-500">{suffix}</span>
+        <span className="w-8 text-xs text-neutral-500">{suffix}</span>
       </div>
     </div>
   );
@@ -72,12 +72,12 @@ function Toggle({ label, description, checked, onChange }: ToggleProps) {
       className="flex w-full items-center justify-between gap-4 py-3 text-left"
     >
       <span>
-        <span className="block text-sm text-slate-300">{label}</span>
-        <span className="block text-xs text-slate-500">{description}</span>
+        <span className="block text-sm text-neutral-300">{label}</span>
+        <span className="block text-xs text-neutral-500">{description}</span>
       </span>
       <span
         className={`relative h-6 w-11 shrink-0 rounded-full transition ${
-          checked ? 'bg-rose-500' : 'bg-white/15'
+          checked ? 'bg-neutral-100' : 'bg-white/15'
         }`}
       >
         <span
@@ -105,7 +105,7 @@ export function SettingsPanel({ open, settings, onChange, onReset, onClose }: Se
   return (
     <div className="fixed inset-0 z-50 flex items-end justify-center sm:items-center">
       <div
-        className="absolute inset-0 bg-slate-950/70 backdrop-blur-sm"
+        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
         onClick={onClose}
         aria-hidden="true"
       />
@@ -113,14 +113,14 @@ export function SettingsPanel({ open, settings, onChange, onReset, onClose }: Se
         role="dialog"
         aria-modal="true"
         aria-label="Timer settings"
-        className="relative w-full max-w-md rounded-t-3xl border border-white/10 bg-slate-900 p-6 shadow-2xl sm:rounded-3xl"
+        className="relative w-full max-w-md rounded-t-3xl border border-white/10 bg-neutral-950 p-6 shadow-2xl sm:rounded-3xl"
       >
         <div className="mb-2 flex items-center justify-between">
           <h2 className="text-lg font-semibold text-white">Settings</h2>
           <button
             onClick={onClose}
             aria-label="Close settings"
-            className="rounded-full px-2 py-1 text-slate-400 transition hover:bg-white/10 hover:text-white"
+            className="rounded-full px-2 py-1 text-neutral-400 transition hover:bg-white/10 hover:text-white"
           >
             ✕
           </button>
@@ -176,13 +176,13 @@ export function SettingsPanel({ open, settings, onChange, onReset, onClose }: Se
         <div className="mt-5 flex items-center justify-between">
           <button
             onClick={onReset}
-            className="text-xs text-slate-400 underline underline-offset-4 transition hover:text-slate-200"
+            className="text-xs text-neutral-400 underline underline-offset-4 transition hover:text-neutral-200"
           >
             Reset to defaults
           </button>
           <button
             onClick={onClose}
-            className="rounded-full bg-white px-6 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-200"
+            className="rounded-full bg-white px-6 py-2 text-sm font-semibold text-neutral-900 transition hover:bg-neutral-200"
           >
             Done
           </button>

@@ -69,7 +69,7 @@ export function TimerDisplay({
           >
             {formatClock(remaining)}
           </span>
-          <span className="mt-2 text-xs text-slate-400">
+          <span className="mt-2 text-xs text-neutral-400">
             Session {sessionIndex} of {sessionsBeforeLongBreak}
           </span>
         </div>

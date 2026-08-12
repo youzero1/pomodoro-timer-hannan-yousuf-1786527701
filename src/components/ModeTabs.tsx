@@ -24,7 +24,7 @@ export function ModeTabs({ mode, onChange }: ModeTabsProps) {
             aria-selected={active}
             onClick={() => onChange(m)}
             className={`rounded-full px-3 py-1.5 text-xs font-semibold tracking-wide transition outline-none focus-visible:ring-2 focus-visible:ring-white/40 sm:px-4 sm:text-sm ${
-              active ? `${theme.bgSoft} ${theme.text}` : 'text-slate-400 hover:text-slate-100'
+              active ? `${theme.bgSoft} ${theme.text}` : 'text-neutral-400 hover:text-neutral-100'
             }`}
           >
             {MODE_LABELS[m]}

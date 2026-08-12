@@ -10,7 +10,7 @@ interface TimerControlsProps {
 }
 
 const secondary =
-  'rounded-full border border-white/10 px-5 py-3 text-sm text-slate-300 transition hover:bg-white/5 outline-none focus-visible:ring-2 focus-visible:ring-white/40';
+  'rounded-full border border-white/10 px-5 py-3 text-sm text-neutral-300 transition hover:bg-white/5 outline-none focus-visible:ring-2 focus-visible:ring-white/40';
 
 export function TimerControls({
   mode,
@@ -30,7 +30,7 @@ export function TimerControls({
           onClick={onToggle}
           disabled={startDisabled}
           className={`rounded-full px-10 py-3 text-sm font-semibold uppercase tracking-widest transition outline-none focus-visible:ring-2 focus-visible:ring-white/40 ${
-            startDisabled ? 'cursor-not-allowed bg-white/10 text-slate-500' : theme.button
+            startDisabled ? 'cursor-not-allowed bg-white/10 text-neutral-500' : theme.button
           }`}
         >
           {isRunning ? 'Pause' : 'Start'}
@@ -43,7 +43,7 @@ export function TimerControls({
         </button>
       </div>
       {startDisabled && (
-        <p className="text-xs text-slate-500">Name what you are working on to start focusing.</p>
+        <p className="text-xs text-neutral-500">Name what you are working on to start focusing.</p>
       )}
     </div>
   );

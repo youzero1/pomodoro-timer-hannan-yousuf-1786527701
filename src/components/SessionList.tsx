@@ -31,22 +31,22 @@ export function SessionList({ sessions, onClear }: SessionListProps) {
   return (
     <section className="rounded-2xl border border-white/10 bg-white/5 p-5">
       <div className="flex items-center justify-between gap-3">
-        <h2 className="text-[11px] uppercase tracking-[0.18em] text-slate-400">Session history</h2>
+        <h2 className="text-[11px] uppercase tracking-[0.18em] text-neutral-400">Session history</h2>
         {confirming ? (
           <span className="flex items-center gap-2 text-xs">
-            <span className="text-slate-400">Delete everything?</span>
+            <span className="text-neutral-400">Delete everything?</span>
             <button
               onClick={() => {
                 onClear();
                 setConfirming(false);
               }}
-              className="rounded-full bg-rose-500 px-3 py-1 font-semibold text-white transition hover:bg-rose-400"
+              className="rounded-full bg-neutral-100 px-3 py-1 font-semibold text-neutral-900 transition hover:bg-white"
             >
               Yes, clear
             </button>
             <button
               onClick={() => setConfirming(false)}
-              className="rounded-full border border-white/15 px-3 py-1 text-slate-300 transition hover:bg-white/10"
+              className="rounded-full border border-white/15 px-3 py-1 text-neutral-300 transition hover:bg-white/10"
             >
               Cancel
             </button>
@@ -54,7 +54,7 @@ export function SessionList({ sessions, onClear }: SessionListProps) {
         ) : (
           <button
             onClick={() => setConfirming(true)}
-            className="text-xs text-slate-500 underline underline-offset-4 transition hover:text-slate-300"
+            className="text-xs text-neutral-500 underline underline-offset-4 transition hover:text-neutral-300"
           >
             Clear history
           </button>
@@ -65,10 +65,10 @@ export function SessionList({ sessions, onClear }: SessionListProps) {
         {groups.map((group) => (
           <div key={group.key}>
             <div className="flex items-baseline justify-between border-b border-white/5 pb-2">
-              <h3 className="text-sm font-semibold text-slate-200">
+              <h3 className="text-sm font-semibold text-neutral-200">
                 {friendlyDayLabel(group.key)}
               </h3>
-              <span className="text-xs tabular-nums text-slate-400">
+              <span className="text-xs tabular-nums text-neutral-400">
                 {formatDuration(group.total)}
               </span>
             </div>
@@ -76,12 +76,12 @@ export function SessionList({ sessions, onClear }: SessionListProps) {
               {group.items.map((session) => (
                 <li key={session.id} className="flex items-center justify-between gap-3 py-2.5">
                   <div className="min-w-0">
-                    <p className="truncate text-sm text-slate-200">{session.task}</p>
-                    <p className="text-xs text-slate-500">
+                    <p className="truncate text-sm text-neutral-200">{session.task}</p>
+                    <p className="text-xs text-neutral-500">
                       finished {formatTimeOfDay(session.completedAt)}
                     </p>
                   </div>
-                  <span className="shrink-0 rounded-full bg-white/5 px-2.5 py-1 text-xs tabular-nums text-slate-300">
+                  <span className="shrink-0 rounded-full bg-white/5 px-2.5 py-1 text-xs tabular-nums text-neutral-300">
                     {formatDuration(session.durationSeconds)}
                   </span>
                 </li>

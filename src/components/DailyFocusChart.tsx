@@ -16,11 +16,11 @@ export function DailyFocusChart({ days }: DailyFocusChartProps) {
   return (
     <section className="rounded-2xl border border-white/10 bg-white/5 p-5">
       <div className="flex items-baseline justify-between gap-3">
-        <h2 className="text-[11px] uppercase tracking-[0.18em] text-slate-400">
+        <h2 className="text-[11px] uppercase tracking-[0.18em] text-neutral-400">
           Focus time per day
         </h2>
         {hasData && (
-          <span className="text-xs text-slate-500">
+          <span className="text-xs text-neutral-500">
             Best: {formatDuration(best.seconds)} on {shortWeekday(best.key)}
           </span>
         )}
@@ -44,7 +44,7 @@ export function DailyFocusChart({ days }: DailyFocusChartProps) {
             >
               <span
                 className={`h-5 text-[10px] font-medium tabular-nums transition ${
-                  active === day.key ? 'text-white opacity-100' : 'text-slate-400 opacity-0'
+                  active === day.key ? 'text-white opacity-100' : 'text-neutral-400 opacity-0'
                 }`}
               >
                 {formatDuration(day.seconds)}
@@ -54,13 +54,13 @@ export function DailyFocusChart({ days }: DailyFocusChartProps) {
                   day.seconds === 0
                     ? 'bg-white/10'
                     : isToday
-                      ? 'bg-rose-400'
-                      : 'bg-rose-500/60 group-hover:bg-rose-400'
+                      ? 'bg-neutral-100'
+                      : 'bg-neutral-500/60 group-hover:bg-neutral-200'
                 }`}
                 style={{ height: `${heightPct}%` }}
               />
               <span
-                className={`text-[10px] ${isToday ? 'font-semibold text-slate-200' : 'text-slate-500'}`}
+                className={`text-[10px] ${isToday ? 'font-semibold text-neutral-200' : 'text-neutral-500'}`}
               >
                 {shortWeekday(day.key)}
               </span>
@@ -70,7 +70,7 @@ export function DailyFocusChart({ days }: DailyFocusChartProps) {
       </div>
 
       {!hasData && (
-        <p className="mt-4 text-center text-xs text-slate-500">
+        <p className="mt-4 text-center text-xs text-neutral-500">
           No focus time in the last 7 days yet.
         </p>
       )}

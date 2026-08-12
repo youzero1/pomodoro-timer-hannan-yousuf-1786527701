@@ -77,7 +77,7 @@ function TimerPage() {
         <button
           onClick={() => setSettingsOpen(true)}
           aria-label="Open settings"
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-300 transition hover:bg-white/10 hover:text-white"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-neutral-300 transition hover:bg-white/10 hover:text-white"
         >
           <svg
             viewBox="0 0 24 24"
@@ -110,8 +110,8 @@ function TimerPage() {
         onSkip={timer.skip}
       />
 
-      <Link to="/stats" className="text-sm text-slate-400 transition hover:text-slate-200">
-        Focused <span className="font-semibold text-slate-200">{formatDuration(todaySeconds)}</span>{' '}
+      <Link to="/stats" className="text-sm text-neutral-400 transition hover:text-neutral-200">
+        Focused <span className="font-semibold text-neutral-200">{formatDuration(todaySeconds)}</span>{' '}
         today · see stats →
       </Link>
 

@@ -18,9 +18,9 @@ interface CardProps {
 function Card({ label, value, hint, accent }: CardProps) {
   return (
     <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-      <p className="text-[11px] uppercase tracking-[0.18em] text-slate-400">{label}</p>
+      <p className="text-[11px] uppercase tracking-[0.18em] text-neutral-400">{label}</p>
       <p className={`mt-2 text-3xl font-semibold tabular-nums ${accent}`}>{value}</p>
-      <p className="mt-1 text-xs text-slate-500">{hint}</p>
+      <p className="mt-1 text-xs text-neutral-500">{hint}</p>
     </div>
   );
 }
@@ -48,19 +48,19 @@ export function StatsSummary({
         label="Today"
         value={formatDuration(todaySeconds)}
         hint={comparison}
-        accent="text-rose-300"
+        accent="text-neutral-100"
       />
       <Card
         label="Last 7 days"
         value={formatDuration(weekSeconds)}
         hint={`${focusCount} session${focusCount === 1 ? '' : 's'} recorded in total`}
-        accent="text-sky-300"
+        accent="text-neutral-300"
       />
       <Card
         label="Streak"
         value={`${streak} day${streak === 1 ? '' : 's'}`}
         hint={streak > 0 ? 'Keep it going' : 'Finish a session to start one'}
-        accent="text-emerald-300"
+        accent="text-neutral-300"
       />
     </div>
   );
